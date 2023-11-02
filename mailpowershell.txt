@@ -1,0 +1,34 @@
+# This PowerShell script sends an email
+
+# Define email parameters
+$SMTPServer = "smtp.example.com"
+$SMTPPort = 587
+$SMTPUsername = "your_username@example.com"
+$SMTPPassword = "your_password"
+$SenderEmail = "your_username@example.com"
+$RecipientEmail = "recipient@example.com"
+$Subject = "Test Email"
+$Body = "This is a test email sent from PowerShell."
+
+# Create email credentials
+$SMTPCredentials = New-Object System.Management.Automation.PSCredential ($SMTPUsername, (ConvertTo-SecureString $SMTPPassword -AsPlainText -Force))
+
+# Send the email
+Send-MailMessage -SmtpServer $SMTPServer -Port $SMTPPort -From $SenderEmail -To $RecipientEmail -Subject $Subject -Body $Body -Credential $SMTPCredentials -UseSsl
+
+
+
+
+$From = "mother-of-dragons@houseoftargaryen.net"
+$To = "jon-snow@winterfell.com", "jorah-mormont@night.watch"
+$Cc = "tyrion-lannister@westerlands.com"
+$Attachment = "C:\Temp\Drogon.jpg"
+$Subject = "Photos of Drogon"
+$Body = "<h2>Guys, look at these pics of Drogon!</h2><br><br>"
+$Body += "He is so cute!"
+$SMTPServer = "smtp.mailtrap.io"
+$SMTPPort = "587"
+Send-MailMessage -From $From -to $To -Cc $Cc -Subject $Subject -Body $Body -BodyAsHtml -SmtpServer $SMTPServer -Port $SMTPPort -UseSsl -Credential (Get-Credential) -Attachments $Attachment
+
+
+Send-MailMessage -To '<recipient’s email address>' -From '<sender’s email address>' -Subject 'Your message subject' -Body 'Some important plain text!' -Credential (Get-Credential) -SmtpServer '<smtp server>' -Port 587
