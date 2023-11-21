@@ -1,3 +1,15 @@
+
+In recent years, container-based virtualization technology for edge and cloud computing has advanced dramatically. Virtualization solutions based on Docker Containers provide a more lightweight and efficient virtual environment for Edge and cloud-based applications. Because their use is growing on its own and is still in its early phases, these technologies will face a slew of security issues. Vulnerabilities and malware in Docker container images are two serious security concerns. The risk of privilege escalation is increased because Docker containers share the Linux kernel. As organizations increasingly rely on containerization for application deployment, the need for a secure, decentralized, and privacy-preserving storage solution for Docker images becomes paramount. 
+
+
+This study presents a distributed system framework called Safe Docker Image Sharing with Homomorphic Encryption and Blockchain (SeDIS-HEB). Through homomorphic encryption, authentication, and access management, SeDIS-HEB provides secure docker image sharing. 
+
+The SeDIS-HEB framework prioritizes the following three major functions: (1) secure docker image upload, (2) secure docker image sharing, and (3) secure docker image download. The proposed framework was evaluated using the InterPlanetary File System (IPFS).
+
+ Secure Docker images were uploaded using IPFS, preventing unauthorized users from accessing the data contained within the secure Docker images. The SeDIS-HEB results were transparent and ensured the quality of blockchain data access control authentication, docker image metadata denial-of-service protection, and docker image availability.
+
+
+
 # This PowerShell script sends an email
 
 # Define email parameters
