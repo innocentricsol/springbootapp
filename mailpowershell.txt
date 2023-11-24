@@ -1,4 +1,85 @@
 
+2. Background
+2.1. Docker Image Systems
+Docker image—The combination of program source code and library required for
+service operation is called a Docker image [8]. The service is launched by placing the
+docker image on top of the docker image container. Docker images must be chosen as the
+default option, and Docker base images are read-only files. The base image is typically
+comprised of operating system docker images such as Ubuntu and Debian. Users can
+then use different environments by layering the packages they want to use on top of the
+corresponding base image. Docker images can be built using docker build. Docker images
+can be built in the Advanced Union Mount File System format (AUFS). The AUFS file
+system supports the mounting of multiple image files using containers. Docker images
+save much space on these systems by reusing the images used to develop other concepts,
+allowing for a faster generation.
+InterPlanetary File System (IPFS)—Docker images are usually heavy due to their nature.
+Hence, storage for them in the blockchain is limited. It takes longer at the start to save data
+in the blockchain since it mines blocks first and then saves data in them. Furthermore, while
+storing data in blocks, there is a problem with expanding the size of the block. We used
+IPFS to efficiently separate data storage [9]. A distributed P2P file system that connects
+all computers is known as an interplanetary File System (IPFS). When the files are shared,
+IPFS assist in partitioning and distributing them to nodes in the IPFS network. The IPFS
+hash is returned to the user based on the uploaded file’s contents, which will be recognized
+as the same file if it is kept on the network under a different name. The distributed file can
+be accessed using the IPFS hash when a user requires a file.
+2.2. Secure Docker Image Systems
+CVE (Common Vulnerabilities and Exposures)—CVE is an abbreviation for a publicly
+available list of computer security issues. It is typically referred to as the CVE ID number
+allocated to a security problem. CVE allows professionals to collaborate to prioritize and
+address vulnerabilities to manage safer computer systems. CVE is overseen by MITRE
+Corporation [10], which receives funding from the US Department of Homeland Security’s
+Cybersecurity and Infrastructure Security Agency. When a new CVE is reported, the CVE
+database registers and identifies each new CVE, allowing developers to stay up to date with
+the latest information by locating and continuously updating the system contained in their
+approach. CVE also provides a CVSS score [11] for security, allowing users to determine
+how secure the data is.
+Docker Scan—Docker scanning can generate a list of CVEs for docker images. First and
+foremost, because the docker image is composed of layers, as previously mentioned, the
+docker scan examines the packages in each layer. Once verification is completed, the NVD
+dataset [11] is checked for security issues. In this procedure, we cross-check the CVE list
+and return the stated information to the user. Anchore [12], Clair [13], and Snyk Engine [14]
+are examples of standard Docker image scanning software. In this work, we utilized Snyk
+Engine docker scans to scan images that users download from the hub or their docker
+images.
+Blockchain—Satoshi Nakamoto invented blockchain, a distributed book system, in
+2008 [15]. Blockchain technology is primarily kept in a chain-based distributed storage
+system based on peer-to-peer (P2P) networks of small data units known as “blocks”. It
+is a distributed book storage format that allows arbitrary users to modify the blockchain
+and anyone to inspect transactions or modifications through the blockchain. This research
+proposes a distributed system that stores metadata using blockchain as a database via
+a distributed book storage structure [16]. Each node must be mined to add data to the
+blockchain. A consensus technique known as proof-of-work [17] is required for each node
+in the mining process for each new block.
+Furthermore, denaturing the data necessitates modification of the majority of the
+node’s books, which is difficult. Blockchain was previously made available to anybody
+Energies 2022, 15, 5544 4 of 16
+via public blockchain but currently employs private blockchain for usage by a specific
+organization or hybrid blockchain for a combination of the two. In this research, we used
+the Ethereum public blockchain.
+Smart contract—Ethereum is a public blockchain that may be used to build decentralized applications [18]. The smart contract is a characteristic that distinguishes the Ethereum
+blockchain from others. An intelligent contract [19], a notion of Ethereum founder Vitalik
+Buterin, outlines the process that must be executed in advance, and when requested by the
+contract, it acts as described in the smart contract. The benefit of this method is that if the
+requester meets the contract requirements without the assistance of a third-party intermediary, the requester provides the desired data and returns it, and if this does not satisfy the
+criteria, the contract is stopped. Smart contracts are written in their own languages, which
+can be written in Solidity [20], which is similar to object-oriented programming languages
+such as JAVA and C++.
+Symmetric, asymmetric encryption—In this work, we used various encryption methods
+to ensure the confidentiality of the data. The encryption method employs symmetric,
+asymmetric, and homomorphic keys. “Symmetric key encryption” refers to algorithms that
+enable encryption and decryption using the same key. Symmetric encryption offers the
+advantage of swiftly encrypting any data. This paper proposed an encryption procedure
+for datasets containing a large amount of data. The AES256 technique generates a key and
+encrypts the data using the generated key.
+In asymmetric encryption [21], the user has a public and a private key, unlike symmetric keys. Data encrypted with a public key can be decrypted with a private key and vice
+versa. Asymmetric encryption has the advantage that symmetrically encrypted keys can
+only be utilized by users who encrypted keys with public keys for that symmetric encryption. Furthermore, asymmetric encryption is used for data registered in the blockchain to
+maintain the confidentiality of the data transmitted.
+Homomorphic Encryption—Homomorphic encryption is a cryptographic method designed to allow operations to be carried out with encrypted data [22]. There are two types
+of homomorphic encryption: partial homomorphic encryption and fully homomorphic
+encryption. In this work, partial homomorphic encryption, also known as Pailier methods [23], was used to improve efficiency with less computation and high security. In
+addition, partial homomorphic encryption is used for access control and authentication.
+
 In recent years, container-based virtualization technology for edge and cloud computing has advanced dramatically. Virtualization solutions based on Docker Containers provide a more lightweight and efficient virtual environment for Edge and cloud-based applications. Because their use is growing on its own and is still in its early phases, these technologies will face a slew of security issues. Vulnerabilities and malware in Docker container images are two serious security concerns. The risk of privilege escalation is increased because Docker containers share the Linux kernel. As organizations increasingly rely on containerization for application deployment, the need for a secure, decentralized, and privacy-preserving storage solution for Docker images becomes paramount. 
 
 
